@@ -1,11 +1,44 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+    <div class="navbar">
+        <RouterLink to="/home">HOME</RouterLink>
+        <RouterLink to="/board">BOARD</RouterLink>
+    </div>
+    <RouterView />
 </template>
 
-<style scoped></style>
+<style>
+    #app {
+        min-height: 100%;
+        background: linear-gradient(45deg, purple, rgb(104, 104, 104));
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: center;
+    }
+
+    a {
+        font-size: x-large;
+        margin: 5px;
+    }
+
+    html {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body {
+        flex-grow: 1;
+        min-height: 100vh; /* Fallback for older browsers */
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        box-sizing: border-box;
+    }
+</style>
